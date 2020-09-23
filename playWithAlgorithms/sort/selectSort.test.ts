@@ -1,4 +1,4 @@
-const selectSort = require('./selectSort');
+import { selectSort } from './selectSort';
 
 describe("selectSort", () => {
   it("normal check", () => {

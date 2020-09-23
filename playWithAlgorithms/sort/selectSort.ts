@@ -23,4 +23,4 @@ export const selectSort = (arr: number[]) => {
   return arr;
 }
 
-module.exports = selectSort;
+export default selectSort
