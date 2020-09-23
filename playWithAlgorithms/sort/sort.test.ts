@@ -1,4 +1,4 @@
-import { mergeSort } from './mergeSort';
+import { mergeSort, mergeSortBottomUp } from './mergeSort';
 import selectSort from './selectSort';
 import { randomArrayGenerator, timeSpendRecord } from './../utils/array';
 
@@ -11,5 +11,9 @@ describe('compare sort time spent', () => {
   it('merge sort', () => {
     const curArray = [...randomArray];
     timeSpendRecord(mergeSort, curArray, 'merge sort')
+  })
+  it('merge sort bottom up', () => {
+    const curArray = [...randomArray];
+    timeSpendRecord(mergeSortBottomUp, curArray, 'merge sort bottom up')
   })
 })

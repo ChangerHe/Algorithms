@@ -16,4 +16,19 @@ export const mergeSort = (arr: number[]) => {
   return _merge(mergeSort(arr.slice(0, mid)), mergeSort(arr.slice(mid)))
 }
 
+/**
+ * 自顶向上的归并排序
+ * 整体思路是: 将数组进行大小划分, 前数组的大小是后数组大小的二分之一
+ * 划分好之后, 逐步进行归并即可
+ * @param arr 待排序数组
+ */
+export const mergeSortBottomUp = (arr: number[]) => {
+  let mergedArr = [arr[0]]
+  let r = 1;
+  for (let i = r; i < arr.length;  i = r = r * 2) {
+    mergedArr = _merge(mergedArr, mergeSortBottomUp(arr.slice(r, r * 2)))
+  }
+  return mergedArr
+}
+
 export default mergeSort;
