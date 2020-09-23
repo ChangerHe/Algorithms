@@ -23,4 +23,16 @@ describe('compare sort time spent', () => {
     const curArray = [...randomArray];
     expect(timeSpendRecord(quickSort, curArray, 'quick sort')).toEqual(truthySort);
   })
+  // 50w条数据的测试结论
+  // 归并: 19621   自底向上的归并: 23973  快排: 29208
+
+  // 10w条数据的测试结论:
+  // 归并: 180   自底向上的归并: 860  快排: 678
+  // 为什么归并会比快排速度快这么多??? 
+
+  // 1w条数据的测试结论
+  // 选择: 90    归并: 19   自底向上的归并: 14  快排: 26
+
+  // 1k条数据的测试结论
+  // 选择: 3    归并: 2   自底向上的归并: 7  快排: 9
 })
