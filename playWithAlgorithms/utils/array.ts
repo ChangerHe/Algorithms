@@ -9,7 +9,8 @@ export const randomArrayGenerator = (length: number, range: [number, number]) =>
 
 export const timeSpendRecord = (func: (arr: number[]) => number[], arr: number[], symbol: string) => {
   const prevTime = new Date().getTime();
-  func(arr);
+  const newArr = func(arr);
   const nextTime = new Date().getTime();
   console.log(`function ${symbol} used time: `, nextTime - prevTime)
+  return newArr;
 }
