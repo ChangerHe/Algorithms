@@ -1,7 +1,3 @@
-export const _partition = () => {
-
-}
-
 export const quickSort = (arr: number[]) => {
   let tempPos = arr[0];
   const largerArr = [];
