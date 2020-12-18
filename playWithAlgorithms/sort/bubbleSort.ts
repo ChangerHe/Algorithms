@@ -16,3 +16,17 @@ export const bubbleSort = (arr: number[]) => {
     return [lastComparedNum];
   }
 };
+
+export const bubbleSort2 = (arr: number[]) => {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - 1; j++) {
+      const b = arr[j];
+      const c = arr[j + 1]
+      if (b > c) {
+        arr[j] = c;
+        arr[j + 1] = b;
+      }
+    }
+  }
+  return arr;
+}
