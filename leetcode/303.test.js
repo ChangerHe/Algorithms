@@ -10,6 +10,7 @@ describe("", () => {
     expect(numArray1.sumRange(0,2)).toBe(1)
     expect(numArray1.sumRange(2,5)).toBe(-1)
     expect(numArray1.sumRange(0,5)).toBe(-3)
+    expect(numArray1.sumRange(0,5)).toBe(-3)
     
   });
 });
