@@ -16,16 +16,18 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var deleteDuplicates = function(head) {
-  const purge = (chain) => {
-    if (!chain) return null;
-    if (chain.next && chain.val === chain.next.val) {
-      return {val: chain.val, next: purge(chain.next.next)}
-    } else {
-      return {val: chain.val, next: purge(chain.next)}
+var deleteDuplicates = function (head) {
+  if (!head) return null;
+  let point1 = head;
+  let point2 = head;
+  while (point2.next) {
+    if (point2.next.val !== point2.val) {
+      point1.next.val = point2.next.val;
+      point1 = point1.next;
     }
+    point2 = point2.next;
   }
-  return purge(head)
+  point1.next = null;
+  return head;
 };
 // @lc code=end
-
