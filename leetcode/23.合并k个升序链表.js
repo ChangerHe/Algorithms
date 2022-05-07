@@ -76,6 +76,7 @@ var mergeKLists = function (lists) {
   }
   return kList;
 };
+// TODO: 使用最小堆来进行处理
 
 module.exports = mergeKLists;
 // @lc code=end
