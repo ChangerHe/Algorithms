@@ -31,7 +31,6 @@ var middleNode = function (head) {
       slowPoint = slowPoint;
     }
   }
-  console.log(slowPoint, "slowPoint");
   return slowPoint;
 };
 
