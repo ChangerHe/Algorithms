@@ -72,4 +72,6 @@ var reverseList = function (head) {
   head.next = null;
   return last;
 };
+
+module.exports = reverseList;
 // @lc code=end
