@@ -9,6 +9,7 @@
  * @param {string} s
  * @return {string}
  */
+// 解法1(不正确解法) 无法保证字典序最小
 var removeDuplicateLetters = function (s) {
   let res = "";
   for (let i = 0; i < s.length; i++) {
