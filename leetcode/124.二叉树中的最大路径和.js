@@ -18,7 +18,19 @@
  * @return {number}
  */
 var maxPathSum = function(root) {
-
+    let beforeVal = -Infinity
+    const dfs = (tree) => {
+        if (!tree) return 0;
+        const l = dfs(tree.left)
+        const r = dfs(tree.right)
+        beforeVal = Math.max(beforeVal, tree.val + l + r)
+        const sum = tree.val + Math.max(0, l, r)
+        return sum < 0 ? 0 : sum
+    }
+    dfs(root)
+    return beforeVal
 };
+
+module.exports = maxPathSum;
 // @lc code=end
 
