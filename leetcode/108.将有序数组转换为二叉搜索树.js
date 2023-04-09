@@ -1,9 +1,9 @@
+const TreeNode = require('./helper').TreeNode
 /*
  * @lc app=leetcode.cn id=108 lang=javascript
  *
  * [108] 将有序数组转换为二叉搜索树
  */
-
 // @lc code=start
 /**
  * Definition for a binary tree node.
@@ -17,18 +17,19 @@
  * @param {number[]} nums
  * @return {TreeNode}
  */
-var sortedArrayToBST = function(nums) {
-  const buildBST = (start, end) => {
-    if (start > end) return null;
-    const mid = (start + end) >>> 1;
-    const root = new TreeNode(nums[mid])
-
-    root.left = buildBST(start, mid - 1)
-    root.right = buildBST(mid + 1, end)
-
-    return root;
-  }
-  return buildBST(0, nums.length - 1)
+var sortedArrayToBST = function (nums) {
+  const genTree = (arr) => {
+    const len = arr.length
+    if (!len) return null;
+    const mid = ~~(len / 2)
+    console.log('mid:', mid ,'len', len)
+    const l = mid !== 0 ? genTree(arr.slice(0, mid)) : null;
+    const r = mid !== 0 ? genTree(arr.slice(mid)) : null
+    return new TreeNode(arr[mid], l, r)
+  };
+  console.log(JSON.stringify(genTree(nums)))
+  return genTree(nums);
 };
-// @lc code=end
 
+module.exports = sortedArrayToBST;
+// @lc code=end
